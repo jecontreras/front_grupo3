@@ -1,0 +1,52 @@
+<div class="card border-primary mb-3">
+  <div class="card-header">
+    Libros
+  </div>
+  <div class="card-body text-primary">
+    <h5 class="card-title">Listado de Libro</h5>
+    <div class="my-2 text-left">
+      <button type="button" class="btn btn-rounded btn primary" [routerLink]="['/clientes/form']">Crear Libro</button>
+    </div>
+    <div
+      class="alert alert-info"
+      *ngIf="clientes?.length === 0"
+    >
+      No Hay Registro en la base de datos!
+    </div>
+    <table
+      class="table table-border table-striped"
+      *ngIf="clientes?.length>0"
+    >
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>nombre</th>
+          <th>Cantidad</th>
+          <th>Creado</th>
+          <th>Eliminar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let cliente of clientes"
+        >
+          <td>{{ cliente.id }}</td>
+          <td>{{ cliente.libro }}</td>
+          <td>{{ cliente.cantidad }}</td>
+          <td>{{ cliente.createAt }}</td>
+          <td>
+            <button
+              (click)="delete(cliente)"
+              type="button"
+              name="button"
+              class="btn btn-danger btn-sm"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
