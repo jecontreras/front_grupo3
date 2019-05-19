@@ -1,0 +1,52 @@
+<div class="container content p-3 border border-primary">
+  <div
+    class=" justify-content-center p-3 mb-2 bg-primary text-white row rounded"
+  >
+    <div class="col">
+      <h5>Libros</h5>
+    </div>
+    <div class="">
+      <button
+        type="button"
+        name="button"
+        class="btn btn-success"
+        [routerLink]="['/libro/form']"
+      >
+        Agregar Libro
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <table class="table">
+      <thead class="thead-dark rounded">
+        <tr>
+          <th scope="col">ISBN</th>
+          <th scope="col">Libro</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Create</th>
+          <th scope="col">Editar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let item of lista"
+        >
+          <th scope="row">{{ item.isbn }}</th>
+          <td>{{ item.libro }}</td>
+          <td>{{ item.cantidad || 0 }}</td>
+          <td>{{ item.createdAt }}</td>
+          <td>
+            <button
+              type="button"
+              name="button"
+              class="btn btn-danger"
+              [routerLink]="['/libro/form', item.id]"
+            >
+              Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

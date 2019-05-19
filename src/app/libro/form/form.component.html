@@ -1,0 +1,37 @@
+<div class="content container">
+  <div
+    class="row p-3 mb-2 bg-primary text-white rounded"
+  >
+    <h5>{{ title }}</h5>
+  </div>
+  <div class="column">
+    <div>
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">ISB</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="data.isbn">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-form-label col-sm-2">Nombre del Libro</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="data.nombre">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="nombre" class="col-form-label col-sm-2">Cantidad</label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" [(ngModel)]="data.cantidad">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-6">
+          <button type="button" (click)="create()" *ngIf="!data.id else elseBlock" role="button" class="btn btn-primary">Crear</button>
+          <ng-template #elseBlock>
+            <button type="button" (click)="eliminar(data.id)" role="button" class="btn btn-primary">Eliminar</button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

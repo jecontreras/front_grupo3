@@ -9,8 +9,11 @@ import { ClienteService } from './clientes/cliente.service';
 import { DirectivaComponent } from './directiva/directiva.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { FormComponent } from './clientes/form.component';
+import { FormComponent } from './libro/form/form.component';
 import { FormsModule } from '@angular/forms';
+import { LibroComponent } from './libro/libro.component';
+import { PrestarComponent } from './prestar/prestar.component';
+import { FormprestarComponent } from './prestar/formprestar/formprestar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { FormsModule } from '@angular/forms';
     DirectivaComponent,
     HeaderComponent,
     FooterComponent,
-    FormComponent
+    FormComponent,
+    LibroComponent,
+    PrestarComponent,
+    FormprestarComponent
   ],
   imports: [
     BrowserModule,

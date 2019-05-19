@@ -1,0 +1,41 @@
+<div class="container content p-3 border border-primary">
+  <div
+    class=" justify-content-center p-3 mb-2 bg-primary text-white row"
+  >
+    <div class="col">
+      <h5>Libros Prestados</h5>
+    </div>
+    <div class="">
+      <button
+        type="button"
+        name="button"
+        class="btn btn-success"
+        [routerLink]="['/libro/form']"
+      >
+        Agregar Libro Prestados
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ISBN</th>
+          <th scope="col">Libro</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Create</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let item of lista"
+        >
+          <th scope="row">{{ item.isbn }}</th>
+          <td>{{ item.libro }}</td>
+          <td>{{ item.cantidad || 0 }}</td>
+          <td>{{ item.createdAt }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
